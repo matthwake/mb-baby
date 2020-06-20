@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "519564303670",
+    "firebase_url": "https://mbbaby.firebaseio.com",
+    "project_id": "mbbaby",
+    "storage_bucket": "mbbaby.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519564303670:android:b5a97ef3e92e5fd622a797",
+        "android_client_info": {
+          "package_name": "com.mbbabymaio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519564303670-mtigjku5ko6pe8dbeg03f0fmjhgqqr29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUhzT5_K0CDgo3dO6abiJY6ZKEQkQ4U88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519564303670-mtigjku5ko6pe8dbeg03f0fmjhgqqr29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
