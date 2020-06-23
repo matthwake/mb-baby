@@ -1,15 +1,25 @@
 import styled from 'styled-components/native';
 
 import Button from '~/components/Button';
+import Input from '~/components/Input';
 
 export const Container = styled.View`
   flex: 1;
   background: #f1f1f1; /*#7159c1*/
 `;
 
+export const SearchInput = styled(Input)`
+  background: #e4e4e4;
+  border: 3px solid #08abdb;
+  border-radius: 25px;
+  margin: 20px 20px 10px 20px;
+`;
+
 export const BannerFeatured = styled.Image`
   height: 180px;
-  width: 100%;
+  border-radius: 30px;
+
+  margin: 10px 10px 10px 10px;
 `;
 
 export const BannerViewSelected = styled.View`
@@ -29,11 +39,9 @@ export const BannerSelected = styled.View`
 `;
 
 export const TitleView = styled.View`
-  align-items: center;
-  justify-content: center;
   flex-direction: row;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 `;
 
 export const LineTitle = styled.View`
@@ -43,10 +51,8 @@ export const LineTitle = styled.View`
 `;
 
 export const Title = styled.Text`
+  font-family: 'Ubuntu-Bold';
   font-size: 18px;
-  font-weight: bold;
-  /*align-self: flex-start;
-  margin-top: 20px;*/
   margin-left: 10px;
   margin-right: 10px;
   color: #08b2e4;

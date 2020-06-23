@@ -16,6 +16,7 @@ import {
   BannerFeatured,
   BannerViewSelected,
   BannerSelected,
+  SearchInput,
   TitleView,
   LineTitle,
   Title,
@@ -94,24 +95,28 @@ export default function Home() {
   return (
     <Container>
       <ProductScrollView>
+        <SearchInput
+          placeholder="Pesquisar"
+          returnKeyType="send"
+          icon="search"
+          iconColor="colorWhite"
+        />
+
         <BannerFeatured
           source={{
             uri:
               'https://firebasestorage.googleapis.com/v0/b/mbbaby.appspot.com/o/bannersFeatured%2Fbanner-desconto-37p.png?alt=media&token=30ed099f-000d-477a-8ebb-b83dadb0702e',
           }}
         />
-        <BannerViewSelected>
-          <BannerSelected />
-        </BannerViewSelected>
 
         <TitleView>
-          <LineTitle />
-          <Title>Coleção Standart</Title>
-          <LineTitle />
+          <Title>Populares</Title>
         </TitleView>
 
         <FlatList
           data={products}
+          horizontal
+          showsHorizontalScrollIndicator={false}
           renderItem={({ item, index }) => (
             <ProductItem
               data={item}
@@ -123,13 +128,13 @@ export default function Home() {
         />
 
         <TitleView>
-          <LineTitle />
-          <Title>Coleção Premium</Title>
-          <LineTitle />
+          <Title>Mais vendidos</Title>
         </TitleView>
 
         <FlatList
           data={products}
+          horizontal
+          showsHorizontalScrollIndicator={false}
           renderItem={({ item, index }) => (
             <ProductItem
               data={item}

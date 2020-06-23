@@ -2,6 +2,7 @@ import React from 'react';
 // import { Image } from 'react-native';
 
 import {
+  ContainerButton,
   Container,
   ImageView,
   Image,
@@ -20,30 +21,29 @@ export default function Product({ data, index, onPress }) {
   const valueProduct = parseFloat(getValue).toFixed(2).replace('.', ',');
 
   return (
-    <Container>
-      <ImageView>
-        <Image
-          source={{ uri: data.image }}
-          resizeMethod="resize"
-          resizeMode="contain"
-          style={{ flex: 1 }}
-        />
-      </ImageView>
+    <ContainerButton
+      onPress={() => {
+        onPress(index);
+      }}
+    >
+      <Container>
+        <ImageView>
+          <Image
+            source={{ uri: data.image }}
+            resizeMethod="resize"
+            resizeMode="contain"
+            style={{ flex: 1 }}
+          />
+        </ImageView>
 
-      <Info>
-        <Title>{data.title}</Title>
-        <Description>{data.description}</Description>
-        <Value>R$ {valueProduct}</Value>
-        <SubmitButtonView>
-          <SubmitButton
-            onPress={() => {
-              onPress(index);
-            }}
-          >
-            VISUALIZAR
-          </SubmitButton>
-        </SubmitButtonView>
-      </Info>
-    </Container>
+        <Info>
+          <Title>{data.title}</Title>
+
+          <Value>R$ {valueProduct}</Value>
+        </Info>
+      </Container>
+    </ContainerButton>
   );
 }
+
+// <Description>{data.description}</Description>

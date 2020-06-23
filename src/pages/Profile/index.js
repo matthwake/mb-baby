@@ -68,7 +68,7 @@ export default function Profile() {
       <Icon name="arrow_forward" size={20} color="#fff" />
     */
     navigation.setOptions({
-      title: 'Perfil Facebook',
+      title: 'Perfil',
       headerTransparent: true,
       headerLeft: null,
       headerRight: () => (

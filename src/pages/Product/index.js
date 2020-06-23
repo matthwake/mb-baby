@@ -246,7 +246,7 @@ export default function Product() {
 
           <SubmitButton
             onPress={addCart}
-            style={{ backgroundColor: '#ffac00' }}
+            style={{ backgroundColor: '#007EA7' }}
           >
             Adicionar no carrinho
           </SubmitButton>

@@ -2,54 +2,59 @@ import styled from 'styled-components/native';
 
 import Button from '~/components/Button';
 
-export const Container = styled.View`
+export const ContainerButton = styled.TouchableOpacity`
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 15px;
-  border-radius: 4px;
-  background: #fff;
+  margin-bottom: 10px;
+`;
 
-  display: flex;
-  flex-direction: row;
+export const Container = styled.View`
+  flex: 1;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  border-radius: 4px;
+  padding: 10px;
+  background: #fff;
 `;
 
 export const ImageView = styled.View`
   flex: 1;
+  align-items: center;
 `;
 
 export const Image = styled.Image`
-  height: 170px;
-  width: 100%;
+  height: 150px;
+  width: 150px;
 `;
 
 export const Info = styled.View`
   flex: 1;
-  height: 100%;
+  width: 100%;
   flex-direction: column;
-  margin-right: 20px;
 `;
 
 export const Title = styled.Text`
-  font-weight: bold;
+  font-family: 'Ubuntu-Regular';
+  text-transform: capitalize;
   font-size: 16px;
-  text-transform: uppercase;
-
-  margin-top: 10px;
 `;
 
 export const Description = styled.Text.attrs({
   numberOfLines: 1,
 })`
-  font-size: 13px;
+  font-family: 'Ubuntu-Regular';
+  font-size: 12px;
   text-transform: uppercase;
   color: #bbb;
 `;
 
 export const Value = styled.Text`
-  text-align: right;
-  margin-top: 10px;
+  font-family: 'Ubuntu-Bold';
+  font-size: 16px;
+  color: #0ebff3;
+
+  margin-top: 5px;
 `;
 
 export const SubmitButtonView = styled.View`

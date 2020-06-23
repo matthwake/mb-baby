@@ -66,5 +66,6 @@
   "jest": {
     "preset": "react-native"
   },
-  "resolutions": { "logkitty": "^0.7.1" }
+  "resolutions": { "logkitty": "^0.7.1"
+  }
 }

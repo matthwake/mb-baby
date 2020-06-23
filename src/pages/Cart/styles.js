@@ -85,7 +85,7 @@ export const ButtonsView = styled.View`
 `;
 
 export const ContinueShop = styled(Button)`
-  background: #64d1f0;
+  background: #007ea7;
   margin-bottom: 10px;
 `;
 

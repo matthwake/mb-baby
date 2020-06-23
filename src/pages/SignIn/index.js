@@ -33,8 +33,6 @@ export default function SignIn() {
 
   const getDataUSER = useSelector((state) => state.userReducer);
 
-  const [userGoogle, setUserGoogle] = useState();
-
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -57,9 +55,42 @@ export default function SignIn() {
   function onAuthStateChanged(user) {
     if (!user) {
       console.tron.log('No data returned');
-    } else {
+    }
+    setLoading(false);
+
+    if (user.idToken) {
       setLoading(false);
 
+      dispatch({
+        type: 'SET_NAME',
+        payload: { name: user.user.name },
+      });
+
+      dispatch({
+        type: 'SET_EMAIL',
+        payload: { email: user.user.email },
+      });
+
+      dispatch({
+        type: 'SET_PHOTOPROFILE',
+        payload: { photoURL: user.user.photo },
+      });
+
+      navigation.dispatch(
+        CommonActions.reset({
+          index: 0,
+          routes: [
+            {
+              name: 'Home',
+              params: {
+                nameUser: user.user.name,
+                photoUser: user.user.photo,
+              },
+            },
+          ],
+        })
+      );
+    } else {
       dispatch({
         type: 'SET_NAME',
         payload: { name: user.displayName },
@@ -150,23 +181,15 @@ export default function SignIn() {
   }
 
   async function loginGoogle() {
-    try {
-      await GoogleSignin.hasPlayServices;
+    setLoading(true);
 
-      const result = await GoogleSignin.signIn();
-      console.tron.log(result);
-      setUserGoogle(result);
-    } catch (err) {
-      if (err.code === statusCodes.SIGN_IN_CANCELLED) {
-        console.tron.log('Google login canceled');
-      } else if (err.code === statusCodes.IN_PROGRESS) {
-        console.tron.log('Google login in progress');
-      } else if (err.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        console.tron.log('Google services unavailable or offline');
-      } else {
-        console.tron.log(err);
-      }
-    }
+    const result = await GoogleSignin.signIn();
+
+    const { idToken } = result;
+
+    auth.GoogleAuthProvider.credential(idToken);
+
+    return auth().onAuthStateChanged(onAuthStateChanged(result));
   }
 
   if (loading) {

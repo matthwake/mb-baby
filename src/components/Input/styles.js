@@ -11,10 +11,11 @@ export const Container = styled.View`
 `;
 
 export const TInput = styled.TextInput.attrs({
-  placeholderTextColor: 'rgba(255, 255, 255, 0.8)',
+  placeholderTextColor: 'rgba(255, 255, 255, 1)',
 })`
   flex: 1;
+  font-weight: bold;
   font-size: 15px;
   margin-left: 10px;
-  color: #fff;
+  color: ${(props) => props.colorText || '#fff'};
 `;
